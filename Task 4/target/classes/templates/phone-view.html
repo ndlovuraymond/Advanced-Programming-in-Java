@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/phone-view.css" th:href="@{/css/phone-view.css}">
+    <title>Phone View</title>
+</head>
+<body>
+
+<h2>Phone List</h2>
+
+<section id="content">
+<table border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Release Year</th>
+        <th>User Rating</th>
+        <th>Version</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="phone : ${phones}">
+        <td th:text="${phone.name}"></td>
+        <td th:text="${phone.releaseYear}"></td>
+        <td th:text="${phone.userRating}"></td>
+        <td th:text="${phone.version}"></td>
+        <td>
+            <a th:href="@{/phones/compare/{id}/{id}(id=${phone.name})}">Compare</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</section>
+
+</body>
+</html>

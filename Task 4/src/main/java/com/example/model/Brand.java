@@ -1,0 +1,23 @@
+package com.example.model;
+
+import jakarta.persistence.*;
+
+@Entity(name = "brand")
+@Table(name = "brand")
+public class Brand {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "brand_id")
+    private int brandId;
+
+    @Column(name = "brand")
+    private String brand;
+
+    public Brand(){}
+    public Brand(String brand) {
+        this.brand = brand;
+    }
+
+}
+

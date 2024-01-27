@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/phone-compare.css" th:href="@{/css/phone-compare.css}">
+    <title>Phone Comparison</title>
+</head>
+<body>
+
+<h2>Phone Comparison</h2>
+<a href="/phones">Link to home page</a>
+<section id="comparison">
+    <div class="container">
+<div th:if="${selectedPhone != null}" class="phone">
+    <h3 th:text="${selectedPhone.name}"></h3>
+    <p>Release Year: <span th:text="${selectedPhone.releaseYear}"></span></p>
+    <p>User Rating: <span th:text="${selectedPhone.userRating}"></span></p>
+    <p>Version: <span th:text="${selectedPhone.version}"></span></p>
+    <p>Bluetooth Version: <span th:text="${selectedPhone.bluetoothVersion}"></span></p>
+    <p>Software: <span th:text="${selectedPhone.software}"></span></p>
+    <p>Software Version: <span th:text="${selectedPhone.softwareVersion}"></span></p>
+    <p>Camera: <span th:text="${selectedPhone.camera}"></span></p>
+    <p>Wifi: <span th:text="${selectedPhone.wifi}"></span></p>
+</div>
+<div class="vs">
+    <h2>VS</h2>
+</div>
+<div th:if="${comparisonPhone != null}" class="phone">
+    <h3 th:text="${comparisonPhone.name}"></h3>
+    <p>Release Year: <span th:text="${comparisonPhone.releaseYear}"></span></p>
+    <p>User Rating: <span th:text="${comparisonPhone.userRating}"></span></p>
+    <p>Version: <span th:text="${comparisonPhone.version}"></span></p>
+    <p>Bluetooth Version: <span th:text="${comparisonPhone.bluetoothVersion}"></span></p>
+    <p>Software: <span th:text="${comparisonPhone.software}"></span></p>
+    <p>Software Version: <span th:text="${comparisonPhone.softwareVersion}"></span></p>
+    <p>Camera: <span th:text="${comparisonPhone.camera}"></span></p>
+    <p>Wifi: <span th:text="${comparisonPhone.wifi}"></span></p>
+</div>
+    </div>
+</section>
+
+<section class="select">
+<div th:if="${allPhones != null}" class="phone-choice">
+    <h4>Select a phone to compare:</h4>
+    <ul>
+        <li th:each="phone : ${allPhones}">
+            <a th:href="@{/phones/compare/{selectedName}/{comparisonName}(selectedName=${selectedPhone.name},comparisonName=${phone.name})}" th:text="${phone.name}"></a>
+        </li>
+    </ul>
+</div>
+</section>
+
+</body>
+</html>

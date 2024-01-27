@@ -1,0 +1,42 @@
+h2 {
+    font-size: 4rem;
+    text-align: center;
+    display: block;
+    font-family: Rockwell;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    border: none;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    margin-bottom: 20%;
+    background-color: rgba(114, 98, 98, 0.7);
+}
+
+td,th {
+    border: none;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    font-size: 1.25rem;
+    font-family: sans-serif;
+    color: white;
+    width: 35%
+}
+
+body {
+    background-image: url("https://www.cnet.com/a/img/resize/be75693d76fa05d221c69eab339bc6b7165d9ae3/hub/2023/07/05/dbbaffb7-80be-44be-9d79-c88ac856d36a/5g6a9290.jpg?auto=webp&fit=crop&height=675&width=1200");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+a {
+    color: #38d2a8;
+    font-size: 1.25rem;
+}
